@@ -216,7 +216,7 @@ function Dashboard() {
   }, []);
 
   if (loading) return <div className="h-screen flex justify-center items-center">
-    <img src="./public/loading.gif" alt="Cargando..." className=" max-w-2xs" />
+    <img src="./src/assets/loading.gif" alt="Cargando..." className=" max-w-2xs" />
   </div>
     ;
   if (error) return <div>{error}</div>;
@@ -226,7 +226,7 @@ function Dashboard() {
       <header className="relative bg-white">
         {/* Barra superior con mensaje de bienvenida */}
         <p className="flex h-10 items-center justify-center bg-[#5bd6d6] px-4 
-        text-xl font-medium text-gray-800 sm:px-6 lg:px-8">
+        text-xl font-semibold text-gray-800 sm:px-6 lg:px-8">
           Bienvenid@ {DataUsuario.nombre_usuario}
         </p>
 
@@ -253,7 +253,7 @@ function Dashboard() {
               {/* Botón de salir */}
               <div className="ml-auto flex items-center">
                 <div className=" flex lg:justify-end ">
-                  <a href="/" className="text-wrap font-semibold text-gray-900">
+                  <a href="/" className="text-wrap font-semibold text-gray-900 hover:text-[#5bd6d6]">
                     Salir
                   </a>
                   <ArrowRightStartOnRectangleIcon className="h-6 p-1" />
@@ -265,7 +265,7 @@ function Dashboard() {
       </header>
 
       {/* Panel */}
-      <div className='p-[10%]'>
+      <div className='p-15 bg-gray-100'>
         <div className='p-8 border-1 rounded-xl border-gray-200 shadow-[0px_11px_20px_5px_rgba(0,0,0,0.2)]'>
           <div className="justify-items-end border-b border-gray-200 h-16 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Botón para agregar un nuevo proyecto */}
