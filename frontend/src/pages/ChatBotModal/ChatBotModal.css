@@ -1,0 +1,23 @@
+.typing-animation {
+    font-size: 3em;
+    animation: blink 1.4s infinite both;
+  }
+  
+  @keyframes blink {
+    0% { opacity: .2; }
+    20% { opacity: 1; }
+    100% { opacity: .2; }
+  }
+  
+  /* Para simular la escritura */
+  .typing-animation::before {
+    content: '.';
+    animation: blink 1.4s infinite both;
+  }
+  
+  .typing-animation::after {
+    content: '..';
+    animation: blink 1.4s infinite 0.4s both;
+  }
+  
+  

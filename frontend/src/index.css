@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+:root {
+  font-family: sans-serif;
+
+  button {
+    background: #5bd6d6;
+    color: #1e2939;
+  }
+
+  button:hover {
+    background: #1e2939;
+    color: #ffffff;
+  }
+}
+
+html {
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+body {
+  height: 100%;
+}
