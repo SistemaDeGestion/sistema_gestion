@@ -67,12 +67,6 @@ function LoginForm() {
                 {/* Contenido del formulario */}
                 <div className="p-5 flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
                   <div className="relative mt-20  flex-1 px-4 sm:px-6">
-                    {/* Logo de la empresa */}
-                    <img
-                      alt="Your Company"
-                      src="https://placehold.co/40x40/5bd6d6/white?text=Logo" // Placeholder image for company logo
-                      className="mx-auto h-10 w-auto"
-                    />
                     {/* Título del formulario */}
                     <h2 className="mt-10 mb-10 text-center text-2xl font-bold tracking-tight text-black">
                       Inicia sesión en tu cuenta
