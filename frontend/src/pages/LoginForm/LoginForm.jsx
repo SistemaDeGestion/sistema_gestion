@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react'; // Importa React y lo necesario
 import { useNavigate } from 'react-router-dom'; // Importa la función para manejar redirecciones y navegación dinámica
 import { login } from '../../api.js'; // Importa funciones del api.js
@@ -10,8 +9,9 @@ function LoginForm() {
   const [password, setPassword] = useState(''); // Almacena la contraseña
   const navigate = useNavigate(); // Permite cambiar de página dinámicamente
   const [errorMessage, setErrorMessage] = useState(''); // Almacena mensajes de error
-  const [showPassword, setShowPassword] = useState(false);
-  // Función para manejar el envío del formulario
+  const [showPassword, setShowPassword] = useState(false); // Controla la visibilidad de la contraseña
+
+  // Función para manejar el envío del formulario de inicio de sesión
   const formLogin = async (e) => {
     e.preventDefault(); // Previene el comportamiento por defecto del formulario
     setErrorMessage(''); // Limpia cualquier mensaje de error previo
@@ -34,8 +34,9 @@ function LoginForm() {
       setErrorMessage('Usuario o contraseña incorrectos');
     }
   };
+
   // Función para alternar la visibilidad de la contraseña
-  const togglePasswordVisibility = () => { // <--- Nueva función
+  const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
@@ -69,7 +70,7 @@ function LoginForm() {
                     {/* Logo de la empresa */}
                     <img
                       alt="Your Company"
-                      src="../src/assets/react.svg"
+                      src="https://placehold.co/40x40/5bd6d6/white?text=Logo" // Placeholder image for company logo
                       className="mx-auto h-10 w-auto"
                     />
                     {/* Título del formulario */}
@@ -84,7 +85,8 @@ function LoginForm() {
                       </label>
                       <div className="mt-2">
                         <input
-                          type="username"
+                          type="text" // Cambiado a 'text' para usuario
+                          id="username" // Añadido id para accesibilidad
                           value={username}
                           onChange={(e) => setUsername(e.target.value)}
                           required
@@ -98,7 +100,8 @@ function LoginForm() {
                       </label>
                       <div className="mt-2 relative"> {/* Añadido 'relative' para posicionar el icono */}
                         <input
-                          type={showPassword ? 'text' : 'password'} // <--- Tipo de input dinámico
+                          type={showPassword ? 'text' : 'password'} // Tipo de input dinámico
+                          id="password" // Añadido id para accesibilidad
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
                           required
@@ -108,9 +111,10 @@ function LoginForm() {
                         {/* Icono de ojo */}
                         <button
                           type="button" // Importante: para evitar que el botón envíe el formulario
-                          onClick={togglePasswordVisibility} // <--- Llama a la función al hacer clic
+                          onClick={togglePasswordVisibility} // Llama a la función al hacer clic
                           className="absolute inset-y-0 right-0 pr-3 flex items-center mb-10 text-gray-500 hover:text-gray-700"
                           style={{ top: '50%', transform: 'translateY(-50%)' }} // Centra verticalmente el icono
+                          aria-label={showPassword ? "Ocultar contraseña" : "Mostrar contraseña"} // Accesibilidad
                         >
                           {showPassword ? (
                             // Icono de ojo abierto (visible)
@@ -130,12 +134,11 @@ function LoginForm() {
                       {/* Botón de inicio de sesión */}
                       <button
                         type="submit"
-                        onClick={formLogin}
-                        className="cursor-pointer mt-8 flex w-full justify-center rounded-md  px-3 py-1.5 text-lg  font-semibold ">
+                        className="cursor-pointer mt-8 flex w-full justify-center rounded-md bg-[#5bd6d6] text-white px-3 py-1.5 text-lg font-semibold hover:bg-[#4ac0c0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5bd6d6]">
                         Ingresar
                       </button>
                       {/* Mensaje de error si existe */}
-                      {errorMessage && <p className="error-message text-red-600 mt-1">{errorMessage}</p>}
+                      {errorMessage && <p className="error-message text-red-600 mt-3 text-center">{errorMessage}</p>}
                     </form>
                     <p className="mt-10 text-center text-sm text-gray-500">
                       ¿Eres nuevo?{' '}

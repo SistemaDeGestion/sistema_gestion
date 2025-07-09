@@ -218,8 +218,7 @@ function Dashboard() {
   if (loading) return <div className="h-screen flex justify-center items-center">
     <img src="./src/assets/loading.gif" alt="Cargando..." className=" max-w-2xs" />
   </div>
-    ;
-  if (error) return <div>{error}</div>;
+    ; if (error) return <div>{error}</div>;
 
   return (
     <>
@@ -234,17 +233,6 @@ function Dashboard() {
         <nav aria-label="Top" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="border-b border-gray-200">
             <div className="flex h-16 items-center">
-              {/* Logo */}
-              <div className="ml-4 flex lg:ml-0">
-                <a href="#">
-                  <span className="sr-only">Your Company</span>
-                  <img
-                    alt=""
-                    src="../src/assets/react.svg"
-                    className="h-8 w-auto"
-                  />
-                </a>
-              </div>
 
               {/* Título del panel */}
               <p className="lg:ml-3 text-2xl/7 font-semibold 
@@ -253,7 +241,7 @@ function Dashboard() {
               {/* Botón de salir */}
               <div className="ml-auto flex items-center">
                 <div className=" flex lg:justify-end ">
-                  <a href="/" className="text-wrap font-semibold text-gray-900 hover:text-[#5bd6d6]">
+                  <a href="/" className="text-wrap font-semibold text-gray-900">
                     Salir
                   </a>
                   <ArrowRightStartOnRectangleIcon className="h-6 p-1" />
@@ -265,8 +253,8 @@ function Dashboard() {
       </header>
 
       {/* Panel */}
-      <div className='p-15 bg-gray-100'>
-        <div className='p-8 border-1 rounded-xl border-gray-200 shadow-[0px_11px_20px_5px_rgba(0,0,0,0.2)]'>
+      <div className='p-15'>
+        <div className='p-8 border-1 rounded-xl bg-white border-gray-200 shadow-[0px_11px_20px_5px_rgba(0,0,0,0.2)]'>
           <div className="justify-items-end border-b border-gray-200 h-16 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Botón para agregar un nuevo proyecto */}
             {BotonAgregar()}
@@ -364,7 +352,7 @@ function Dashboard() {
                               <button
                                 onClick={formModal}
                                 type="submit"
-                                className="rounded-md px-3 py-2 text-sm font-semibold ">
+                                className="rounded-md px-3 py-2 text-sm font-semibold cursor-pointer">
                                 {proyectoEditando ? 'Editar' : 'Guardar'}
                               </button>
                             </div>
@@ -422,30 +410,32 @@ function Dashboard() {
               transition
               className="flex transform text-left text-base transition data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in md:my-8 md:max-w-2xl md:px-4 data-closed:md:translate-y-0 data-closed:md:scale-95 lg:max-w-4xl"
             >
-              {/* Contenido del modal */}
+              {/* Contenido del modal de vista */}
               <div className="bg-white shadow-xl w-150 h-90 p-10 overflow-y-auto">
                 {/* Botón para cerrar el modal */}
                 <a
                   type="button"
                   onClick={() => setOpenModal(false)}
-                  className="absolute top-4 right-4 mr-5 cursor-pointer text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8">
+                  className=" absolute cursor-pointer text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8">
                   <span className="sr-only">Close</span>
                   <XMarkIcon aria-hidden="true" className="size-6" />
                 </a>
-                {/* Sección de información */}
 
+                {/* Sección de información */}
                 <div className="col-span-full text">
-                  <p htmlFor="descripcion" className="text-base mt-15 mb-3 block font-bold text-gray-900">
-                    {titulo}
-                  </p>
-                  <div>
-                    <p>{descripcion}</p>
-                  </div>
-                  {/* Etiqueta de estatus del proyecto */}
-                  <div className='mt-5'>
-                    <span className={`mt-2 inline-flex items-center rounded-md px-2 py-1 text-sm font-medium ring-1 ring-inset ${ClasesEstatus(estatus)}`}>
-                      {estatus}
-                    </span>
+                  <div className='flex flex-col gap-4'>
+                    <h1 htmlFor="descripcion" className="mt-10 text-base block font-bold text-gray-900">
+                      {titulo}
+                    </h1>
+                    <div>
+                      <p>{descripcion}</p>
+                    </div>
+                    {/* Etiqueta de estatus del proyecto */}
+                    <div>
+                      <span className={`p-1 inline-flex items-center rounded-md text-sm font-medium ring-1 ring-inset ${ClasesEstatus(estatus)}`}>
+                        {estatus}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
