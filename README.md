@@ -24,9 +24,9 @@ La estructura y los datos de la base de datos no están incluidos en este reposi
 4. Configura las variables de entorno si es necesario.
 
 5. Ejecuta el proyecto:
-  BD MySQL
-  El backend : npm run start
-  El frontend : npm run dev
+  - BD MySQL
+  - El backend : npm run start
+  - El frontend : npm run dev
 
 ## Uso
 
@@ -34,6 +34,6 @@ Accede a la aplicación con un usuario registrado. El administrador podrá gesti
 
 ## Autor
 
-Zuleima Castelar| Perfil -> https://github.com/zulycas
+Zuleima Castelar | Perfil -> https://github.com/zulycas
 
 
