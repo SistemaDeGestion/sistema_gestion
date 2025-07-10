@@ -2,6 +2,9 @@
 
 Aplicación web básica desarrollada como práctica universitaria, con acceso mediante login y asignación de roles gestionados desde la base de datos. El sistema permite al **administrador** crear, editar, visualizar y eliminar tareas o proyectos, mientras que los usuarios con rol de vista pueden únicamente consultar la información. Además, incorpora un **chatbot con inteligencia artificial** para responder preguntas y brindar asistencia informativa a los usuarios.
 
+## Demo
+Seccion de proyectos -> https://miportafoliopersonal.github.io/portafolio/
+
 ## Tecnologías utilizadas
 
 - React
